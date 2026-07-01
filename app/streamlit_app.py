@@ -21,6 +21,15 @@ st.set_page_config(page_title="Movie Recommender", page_icon="🎬", layout="wid
 
 @st.cache_resource(show_spinner="Loading data and training model…")
 def _load():
+    import pickle
+    from src import config
+
+    pkl = config.ARTIFACTS_DIR / "model.pkl"
+    if pkl.exists():
+        with open(pkl, "rb") as f:
+            saved = pickle.load(f)
+        return saved["ds"], saved["model"]
+
     ds = load_dataset()
     model = HybridRecommender(ds).fit()
     return ds, model
