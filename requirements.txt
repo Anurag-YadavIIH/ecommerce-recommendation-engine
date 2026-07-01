@@ -1,0 +1,17 @@
+# Core (required) -- the recommendation engine runs on these alone, fully offline.
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+scipy>=1.10
+
+# Notebook (optional, for the interactive walkthrough)
+jupyter>=1.0
+matplotlib>=3.7
+
+# Testing (optional)
+pytest>=7.0
+
+# LLM explanations (optional bonus -- only needed if you set an API key).
+# Uncomment the one you want to use:
+# anthropic>=0.39
+# openai>=1.0
