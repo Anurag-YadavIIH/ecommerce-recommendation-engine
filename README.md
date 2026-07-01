@@ -133,6 +133,16 @@ System → Filesystem → Enable Win32 long paths*.
 
 ---
 
+## Demo
+
+![Streamlit demo](docs/demo.png)
+
+*User-picker sidebar (left) shows movies the selected user rated highly; the
+recommendation table (right) breaks each pick into its Collaborative (SVD) and
+Content (TF-IDF) component scores before blending into the final Hybrid score.*
+
+---
+
 ## How it works (the 60-second version)
 
 1. **Load & clean** (`data_loader.py`) — drop users/movies with very few
