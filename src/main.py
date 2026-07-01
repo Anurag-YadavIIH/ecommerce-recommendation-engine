@@ -97,7 +97,7 @@ def main(user_id: int | None = None, top_n: int = config.TOP_N) -> None:
 
     banner("Done")
     print("Open notebooks/recommendation_walkthrough.ipynb for an interactive tour,")
-    print("or ask Claude Code to extend any model in src/.")
+    print("or extend any model in src/ — each follows the same .fit()/.recommend() interface.")
 
 
 if __name__ == "__main__":
