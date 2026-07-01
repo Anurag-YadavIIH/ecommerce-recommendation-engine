@@ -1,5 +1,7 @@
 # E-Commerce Product Recommendation Engine
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://ecommerce-recommendation-engine-jktxevwqex4wlpgpz4vum3.streamlit.app/)
+
 A complete, runnable recommendation system built on the **MovieLens** dataset
 (the same techniques power product recommendations on Amazon, Netflix, and most
 e-commerce sites). It implements **content-based filtering**, **collaborative
