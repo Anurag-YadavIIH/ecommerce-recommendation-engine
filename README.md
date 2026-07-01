@@ -80,7 +80,55 @@ streamlit run app/streamlit_app.py
 The app opens at `http://localhost:8501`. The model is cached after the first
 load, so switching users is instant.
 
-### 5. (Optional) Explore the notebook
+### 5. (Optional) REST API
+
+Serve recommendations over HTTP with a single command:
+
+```powershell
+uvicorn app.api:app --reload
+```
+
+The model loads once at startup (~1 s warm, ~10 s cold). Then:
+
+```powershell
+# liveness check
+curl http://localhost:8000/health
+
+# top-5 picks for user 42 with score breakdown
+curl "http://localhost:8000/recommend/42?top_n=5"
+
+# all valid user IDs
+curl http://localhost:8000/users
+```
+
+Sample response for `/recommend/42?top_n=2`:
+
+```json
+{
+  "user_id": 42,
+  "top_n": 2,
+  "recommendations": [
+    {
+      "movie_id": 3160,
+      "title": "Magnolia (1999)",
+      "collaborative_score": 0.644,
+      "content_score": 0.928,
+      "hybrid_score": 0.758
+    },
+    {
+      "movie_id": 2231,
+      "title": "Rounders (1998)",
+      "collaborative_score": 0.627,
+      "content_score": 0.928,
+      "hybrid_score": 0.747
+    }
+  ]
+}
+```
+
+Interactive Swagger UI: `http://localhost:8000/docs`
+
+### 6. (Optional) Explore the notebook
 
 ```powershell
 jupyter notebook notebooks/recommendation_walkthrough.ipynb
