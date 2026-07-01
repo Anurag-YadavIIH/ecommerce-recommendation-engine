@@ -21,17 +21,17 @@ filtering**, **matrix factorization (SVD)**, and a **hybrid** model, then
 | Matrix Factorization | `src/matrix_factorization.py` | truncated SVD into latent taste factors | ratings only |
 | **Hybrid** | `src/hybrid.py` | weighted blend of SVD + content | both |
 | Evaluation | `src/evaluation.py` | RMSE, MAE, Precision@K, Recall@K, Coverage | — |
-| LLM explanations *(bonus)* | `src/llm_explainer.py` | "Because you watched…" via Claude/OpenAI | API key |
+| LLM explanations *(bonus)* | `src/llm_explainer.py` | "Because you watched…" via an LLM API | API key |
 
 ---
 
-## Quick start (Windows + VS Code + Claude Code)
+## Quick start (Windows + VS Code)
 
 ### 1. Open the project
 1. Unzip this folder somewhere easy, e.g. `C:\Users\You\ecommerce-recommendation-engine`.
 2. Open **VS Code** → **File → Open Folder** → select that folder.
-3. If you use the **Claude Code** extension, open its panel — it will read
-   `CLAUDE.md` for project context automatically.
+3. Open the integrated terminal (**Terminal → New Terminal**) — you'll run all
+   commands from here.
 
 ### 2. Set up Python (one time)
 Open a terminal in VS Code (**Terminal → New Terminal**) and run:
@@ -50,7 +50,7 @@ pip install -r requirements.txt
 ```
 
 > Tip: bottom-right in VS Code, click the Python version and pick the one inside
-> `.venv` so the editor and Claude Code use the same interpreter.
+> `.venv` so the editor uses the same interpreter as your terminal.
 
 ### 3. Run the whole thing
 
@@ -263,7 +263,6 @@ fronts.
 ```
 ecommerce-recommendation-engine/
 ├── README.md
-├── CLAUDE.md                  # context for the Claude Code extension
 ├── requirements.txt
 ├── .env.example               # template for optional API keys
 ├── data/
@@ -293,8 +292,6 @@ ecommerce-recommendation-engine/
 - Build a small **Streamlit** or **FastAPI** front end over `HybridRecommender`.
 - Add **diversity / novelty** metrics and re-rank for them.
 - Use the LLM explainer to generate **marketing copy** per recommendation.
-
-Just open Claude Code and ask — `CLAUDE.md` tells it how the pieces fit together.
 
 ---
 

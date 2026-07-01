@@ -20,3 +20,6 @@ artifacts/
 .DS_Store
 .vscode/
 .idea/
+
+# AI assistant context files (local only)
+CLAUDE.md
